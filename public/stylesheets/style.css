@@ -1,0 +1,167 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+@import url('https://fonts.googleapis.com/css?family=PT+Mono');
+
+
+
+.alert-danger {
+  padding-left: 10px;
+  padding-top: 15px;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 30px;
+  width: 40%;
+  color: #a94442;
+  background-color: #f2dede;
+}
+
+.alert-success {
+  padding-left: 10px;
+  padding-top: 15px;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 30px;
+  width: 40%;
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+
+.column01{
+  width: 10%;
+  display: inline-table;
+  padding: 5px;
+  background-color: grey;
+  margin: 5px;
+}
+
+.column01 img{
+  height: 100%;
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.column01:hover img{
+  opacity: 0.5;
+}
+
+.column02{
+  display: flex;
+  flex-direction: column;
+  /*word-wrap: inherit;*/
+  height: auto;
+  width: fit-content;
+  font-size: 14px;
+  text-overflow: initial;
+  color: white;
+  background-color: grey;
+}
+
+/*p {
+  text-align: center ;
+   background-color:grey
+}*/
+
+.details{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+border: black 10px solid;
+width: 700px;
+margin-left: 20%;
+
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font-size: large;
+  font-weight: bolder;
+ 
+}
+
+.movie_rate {
+  padding-right: 25px;
+}
+
+/* Star Rating form */
+.rating {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 50px;
+  margin: 0 auto;
+}
+
+.rating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rating label:last-child {
+  position: static;
+}
+
+.rating label:nth-child(1) {
+  z-index: 5;
+}
+
+.rating label:nth-child(2) {
+  z-index: 4;
+}
+
+.rating label:nth-child(3) {
+  z-index: 3;
+}
+
+.rating label:nth-child(4) {
+  z-index: 2;
+}
+
+.rating label:nth-child(5) {
+  z-index: 1;
+}
+
+.rating label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.rating label .icon {
+  float: left;
+  color: transparent;
+}
+
+.rating label:last-child .icon {
+  color: lightgrey
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+  color: #fae740;
+  /* color: #09f; */
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+  color: #000;
+  text-shadow: 0 0 5px #fae740;
+  /* text-shadow: 0 0 5px #09f; */
+}
+
+.user_feedback{
+  margin: 30px auto auto 20%;
+}
+

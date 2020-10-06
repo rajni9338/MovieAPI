@@ -1,0 +1,23 @@
+extends layout
+block content
+  form(id="queryForm" method="POST", action="/")
+    input(type="hidden",  value="PUT")
+    nav
+      ul.navigation
+        li.logo Popped Rates
+        li.navlink
+          a.link(href='/') Home
+        li.navlink
+          a.link(href='/register') Register
+    h1.login-h1 Login
+    // login form
+  form(method='POST' action='/login')
+    if err_message
+      .alert.alert-danger #{err_message}
+    if suc_message
+      .alert.alert-success #{suc_message}
+    div.form-group
+      input#email.form-login(type='email', placeholder='Name@email.com' name='email' required)
+    div.form-group
+      input#pw.form-login(type='password' name='pword', placeholder='Password' required)
+    button#login-btn.searchButton(type='submit') Log in

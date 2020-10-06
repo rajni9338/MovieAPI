@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+
+  
+      
+  
+  form(id="queryForm" method="POST", action="/")
+    input(type="hidden",  value="PUT")
+    input(id='q' name='q' type='text' placeholder='search')
+    button(id="searchButton" type='submit' href='') search
+    p Genre:
+            select(id="genre" name="genre")
+                option Action
+                option Adventure
+                option Animation
+                option Biography
+                option Comedy
+                option Crime
+                option Documentary
+                option Drama
+                option Family
+                option Fantasy
+                option Film Noir
+                option History
+                option Horror
+                option Music
+                option Musical
+                option Mystery
+                option Romance
+                option Sci-Fi
+                option Short Film
+                option Sport
+                option Superhero
+                option Thriller
+                option War
+                option Western
+    p 
+            input(type="submit")
+  body
+   - if (movies != null) {
+            - for (var i=0; i<movies.length; i++) {
+                    .column01
+                       a(href='/movieDetail/' + movies[i].id) 
+                         img(src=movies[i].medium_cover_image, id = moviesImg)
+                       .column02
+                            src=movies[i].title
+                            src=movies[i].rating            
+              
+               - }};
+         - else {
+             p no result
+          - };
+    

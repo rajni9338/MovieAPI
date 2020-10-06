@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  h1= title
+  p 
+
+  body
+    .details
+        img(src=result.medium_cover_image)
+        .info
+           src= result.title
+           src= result.year
+           src= result.genres
+           br
+           src= result.description_full
+           .movie_rate
+              form.rating(data-user-id='{{../userId}}', data-movie-id='{{id}}')
+                  label
+                    input(type='radio', name='stars', value='1')
+                    span.icon ★
+                  label
+                    input(type='radio', name='stars', value='2')
+                    span.icon ★
+                    span.icon ★
+                  label
+                    input(type='radio', name='stars', value='3')
+                    span.icon ★
+                    span.icon ★
+                    span.icon ★
+                  label
+                    input(type='radio', name='stars', value='4')
+                    span.icon ★
+                    span.icon ★
+                    span.icon ★
+                    span.icon ★
+                  label
+                    input(type='radio', name='stars', value='5')
+                    span.icon ★
+                    span.icon ★
+                    span.icon ★
+                    span.icon ★
+                    span.icon ★
+  
+  form(method="POST", action="/movieDetail", class="user_feedback")
+        input(type="hidden",  value="PUT")
+        input(type="text", name="movie_id")
+        input(type="text", name="user_id")
+        p Rate this movie
+            select(name="rate")
+                option(value="1") 1
+                option(value="2") 2
+                option(value="3") 3
+                option(value="4") 4
+                option(value="5") 5
+            input(type="submit")
